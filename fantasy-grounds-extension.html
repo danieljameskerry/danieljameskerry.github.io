@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dan's Project Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Dan's Project Portfolio</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="godot-project-1.html">Godot Project</a></li>
+							<li><a href="fantasy-grounds-extension.html">Fantasy Grounds Extension</a></li>
+							<li><a href="music-video.html">Animated Music Video</a></li>
+							<li><a href="advertising-campaign.html">Advertising Campaign</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Fantasy Grounds Extension</h1>
+							<p></p>
+							<p>I often try my hand at diving into the source code of games I play to make my own modifications. Most of the time I don't make anything significant and just learn about the inner workings of the program, but this extension is an example of a time where I did more.</p>
+							<p><a href="https://www.fantasygrounds.com/home/home.php"><i>Fantasy Grounds</i></a> is a Virtual Tabletop program, or VTT, which enables users to play conventionally in-person roleplaying games together from anywhere in the world. I've been using it for a few years to play Dungeons and Dragons, and when I wanted to modify the built-in ruleset for the game I had the idea of creating my own extension for Fantasy Grounds.</p>
+							<p>The extension, which I named <i>Armor Hit Brackets</i>, can be found on <a href="https://github.com/danieljameskerry/armor-hit-brackets"><i>my GitHub page</i></a>. If you're not familiar with Dungeons and Dragons, then my explanation of what I've changed in game terms won't make much sense, but what I've essentially done is interrupted one of the pipelines set up to automate the 'attack' system of the game. In Dungeons and Dragons, when a player wishes to attack something, perhaps a monster, then they must roll a 20-sided die (or d20) and the result determines whether the attack hits or misses. This outcome can be changed based on the attack modifier of the player's character, which gives a bonus to the roll, and the defensive value of the target of the attack, known as AC. If the result of the roll is less than the target's AC, the attack misses.</p>
+							<p>I experimented with a more 'realistic' version of this attacking system, which introduces the concept of a 'glancing' hit/miss. This makes the average output of an attack, its damage to the target, more consistent by allowing the attack to deal half damage if the result was sufficiently close to the target's AC.</p>
+							<p>I'm sure you're already very confused as to what any of that means and I don't blame you. What's more important is how I figured out how to implement it to be handled automatically within Fantasy Grounds. This required working out where in the code attack rolls and their results were handled, and then overriding relevant functions to include additional code to handle the calculation of these 'glancing' attacks. To do this, I employed my usual method of scouring the source code of the program and repurposing existing code for my own use.</p>
+							<p>In short, I eventually succeeded. Although I wasn't very familiar with Lua (the language that Fantasy Grounds is written in) prior to this venture, I managed to make sense of everything to slip my changes into the right parts of the pipeline. Ironically, in the end I chose not to make use of my extension as it further complicated the actual Dungeons and Dragons game mechanics and did more harm than good, but I learned a lot about how Fantasy Grounds works which made it all worthwhile.</p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/daniel-kerry-617896236/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/danieljameskerry" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="mailto:danieljameskerry@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Daniel Kerry 2023. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
